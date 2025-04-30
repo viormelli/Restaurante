@@ -29,7 +29,7 @@ export default function AfricanasSection() {
           <div className="card" style={{ width: "18rem", backgroundColor: '#902e00', border: 'transparent', borderRadius:'20px' }}>
             <img src={prato.imagem} alt={prato.nome} className="card-img-top" style={{borderRadius:'20px'}} />
             <div className="card-body">
-            <h5 className="card-title">{prato.nome}</h5>
+              <h5 className="card-title">{prato.nome}</h5>
               <p className="card-text">
                 {prato.descricao}
               </p>

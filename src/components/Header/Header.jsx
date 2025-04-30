@@ -34,7 +34,7 @@ export default function Header() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-4">
 
               <li className="nav-item">
-              <Link className="nav-link active" href='/home' style={{ color: "#902e00", fontWeight: "bold", textDecoration: 'none' }}>
+              <Link className="nav-link active" href='/page' style={{ color: "#902e00", fontWeight: "bold", textDecoration: 'none' }}>
                   Home
                 </Link>
               </li>

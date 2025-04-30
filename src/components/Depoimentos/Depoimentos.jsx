@@ -1,82 +1,73 @@
 "use client";
-
-import { useState } from "react";
+import { HiArrowNarrowRight } from "react-icons/hi";
+import { HiArrowNarrowLeft } from "react-icons/hi";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function DepoimentosSection() {
-  const depoimentos = [
-    {
-      nome: "Maria Clara",
-      idade: 32,
-      profissao: "Empresária",
-      texto: "Nunca imaginei que poderia comer algo tão saboroso e, ao mesmo tempo, fazer o bem para o planeta. Cada prato tem uma história, e isso me faz sentir mais conectada com o que estou consumindo. A comida realmente tem o poder de transformar!",
-      imagem: "/MulherUm.svg", // Ajuste o caminho da imagem certinho
-    },
-    {
-      nome: "João Pedro",
-      idade: 27,
-      profissao: "Chef de Cozinha",
-      texto: "Comida deliciosa, cheia de propósito e respeito pelas raízes culturais. Amei a experiência!",
-      imagem: "/HomemUm.svg",
-    },
-    {
-      nome: "Ana Souza",
-      idade: 40,
-      profissao: "Nutricionista",
-      texto: "Cada prato é uma explosão de sabores autênticos e uma conexão com a natureza.",
-      imagem: "/MulherDois.svg",
-    }
-  ];
+    return (
+        <>
+            <section className="" style={{
+                position: 'relative',
+                height: ' 450px',
+                padding: '15px',
+                padding: '0 70px',
+                display: 'flex',
+                alignItems: 'center'
+            }}>
+                <HiArrowNarrowLeft />
+                <div className="container"> 
+                    <div className="title" style={{textAlign:'center', color:'#f3a620', marginTop:'20px'}}>
+                                <h1>Depoimentos dos nossos clientes</h1>
+                            </div>
+                    <div className="content">
+                       
+                        <div className="card" style={{
+                            position: 'relative',
+                            background: '#fff',
+                            borderRadius: "20px",
+                            margin: '20px 0',
+                            boxShadow: '0 5px 10px rgba(0, 0, 0, 0.4)',
+                            border:'none'
+                        }}>
+                           
+                            <div className="card-content" style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                padding: '30px',
+                                position: 'relative',
+                                zIndex: '100',
+                            }}>
 
-  const [index, setIndex] = useState(0);
 
-  const prevSlide = () => {
-    setIndex((prev) => (prev === 0 ? depoimentos.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setIndex((prev) => (prev === depoimentos.length - 1 ? 0 : prev + 1));
-  };
-
-  const depoimentoAtual = depoimentos[index];
-
-  return (
-    <div className="bg-[#FFF] py-10 px-6 text-center">
-      <h2 className="text-4xl text-orange-400 font-bold mb-8">
-        Depoimentos dos nossos clientes
-      </h2>
-
-      <div className="relative flex justify-center items-center">
-        {/* Botão Anterior */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 bg-transparent border-2 border-orange-400 text-orange-400 rounded-full w-10 h-10 flex items-center justify-center text-2xl"
-        >
-          ‹
-        </button>
-
-        {/* Card de Depoimento */}
-        <div className="bg-[#5e6631] p-10 rounded-3xl max-w-4xl w-full flex flex-col items-center">
-          <img
-            src={depoimentoAtual.imagem}
-            alt={depoimentoAtual.nome}
-            className="w-24 h-24 rounded-full object-cover mb-4"
-          />
-          <p className="text-white font-semibold mb-2">
-            {depoimentoAtual.nome}, {depoimentoAtual.idade} anos, {depoimentoAtual.profissao}:
-          </p>
-          <p className="text-white max-w-2xl">
-            "{depoimentoAtual.texto}"
-          </p>
-        </div>
-
-        {/* Botão Próximo */}
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 bg-transparent border-2 border-orange-400 text-orange-400 rounded-full w-10 h-10 flex items-center justify-center text-2xl"
-        >
-          ›
-        </button>
-      </div>
-    </div>
-  );
+                                {/* Profile image */}
+                                <div className="image" >
+                                    <img src="MulherUm.svg" alt="Profile Image 1" style={{
+                                        height: '185px',
+                                        width: '150px',
+                                        borderRadius: '50%',
+                                        padding: '3px',
+                                        background: 'transparent',
+                                        border: 'none'
+                                    }} />
+                                </div>
+                                {/* Name and profession */}
+                                <div className="name-profession" style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    marginTop: '10px'
+                                }}>
+                                    <span className="name" style={{ fontSize: '20px', fontWeight: '60', color: '#f3a620' }}>Juliana M.</span>
+                                    <span className="profession" style={{ fontSize: '18px', fontWeight: '50', textAlign: 'center' }}>Comida incrível e propósito inspirador! Fui pela curiosidade gastronômica e saí apaixonada pela proposta do restaurante. Os pratos têm sabores autênticos da culinária africana e asiática, e o cardápio traz histórias de comunidades indígenas que o restaurante apoia. Saber que parte do valor é revertido para projetos sociais me fez sentir parte de algo maior.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <HiArrowNarrowRight />
+            </section >
+        </>
+    );
 }

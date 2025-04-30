@@ -1,13 +1,14 @@
-"use client";
-import { useSearchParams } from "next/navigation";
-// import Menu from '@/Components/Menu/menu'
+import Menu from "@/components/Menu/menu";
+
+export const metadata = {
+  title: "Família Terra | Terra & Essência",
+  description: "Conheça a Família Terra do restaurante Terra & Essência.",
+};
 
 export default function Cardapio() {
-    return (
-        <>
-            <div className="container mx-auto align-items-center justify-content-center d-flex flex-wrap gap-2 my-5">
-                <h2>bla bla bla</h2>
-            </div>
-        </>
-    )
+  return (
+    <main>
+      <Menu/>
+    </main>
+  );
 }

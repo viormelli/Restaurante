@@ -33,37 +33,37 @@ export default function PatrocinadoresCarousel() {
     {
       nome: "McDonald's",
       imagem: "/MC.svg",
-      fundo: "#d2b48c",
+      fundo: "#f3a620",
       ajuda: "Ajuda com doações de alimentos e apoio logístico.",
     },
     {
       nome: "Nestlé",
       imagem: "/Nestle.svg",
-      fundo: "#8B2500",
+      fundo: "#2E4A1C",
       ajuda: "Fornece produtos alimentícios para eventos beneficentes.",
     },
     {
       nome: "Mococa",
       imagem: "/Mococa.svg",
-      fundo: "#2E4A1C",
+      fundo: "#8B2500",
       ajuda: "Ajuda com doações de leite e derivados para comunidades.",
     },
     {
       nome: "Brastemp",
       imagem: "/Brastemp.svg",
-      fundo: "#F4A300",
+      fundo: "#E27522",
       ajuda: "Oferece eletrodomésticos para cozinhas solidárias.",
     },
     {
       nome: "Coca-Cola",
       imagem: "/Coca.svg",
-      fundo: "#E27522",
+      fundo: "#f3a620",
       ajuda: "Distribui bebidas em campanhas de arrecadação.",
     },
     {
       nome: "Pão de Açúcar",
       imagem: "/Pao.svg",
-      fundo: "#E27522",
+      fundo: "#8B2500",
       ajuda: "Apoia com cartões de compra para famílias em vulnerabilidade.",
     },
   ];
@@ -87,16 +87,16 @@ export default function PatrocinadoresCarousel() {
   };
 
   return (
-    <div className="container mx-auto my-12 px-6">
+    <div className="container mx-auto my-12 px-6" >
       <h2 className="text-4xl font-bold text-center mb-10" style={{ color: "#8B2500" }}>
         Patrocinadores
       </h2>
 
-      <div className="relative">
+      <div className="relative d-flex gap-3 m-5" style={{alignItems:'center'}}>
         {/* Botão Voltar */}
         <button
           onClick={prevSlide}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-[#8B2500] text-white p-2 rounded-full hover:bg-[#6e1d00]"
+          className="absolute left-0 text-white p-2" style={{backgroundColor:'#8B2500', border:'transparent', borderRadius:'10px'}}
         >
           &#8592;
         </button>
@@ -108,11 +108,11 @@ export default function PatrocinadoresCarousel() {
               <div
                 onClick={() => virarCard(index)}
                 className="flip-card cursor-pointer"
-                style={{ width: "160px", height: "200px", perspective: "1000px" }}
+                style={{ width: "150px", height: "180px", perspective: "1000px"}}
               >
                 <div
                   className={`flip-card-inner ${virados[index] ? "is-flipped" : ""}`}
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", height: "100%"}}
                 >
                   {/* Frente */}
                   <div
@@ -121,6 +121,7 @@ export default function PatrocinadoresCarousel() {
                       backgroundColor: patrocinador.fundo,
                       width: "100%",
                       height: "100%",
+                      borderRadius:'20px'
                     }}
                   >
                     <Image
@@ -128,7 +129,7 @@ export default function PatrocinadoresCarousel() {
                       alt={patrocinador.nome}
                       width={150}
                       height={150}
-                      style={{ objectFit: "contain", width: "100%", height: "100%" }}
+                      style={{ objectFit: "contain", width: "100%", height: "100%", borderRadius:'20px'}}
                     />
                   </div>
 
@@ -153,14 +154,13 @@ export default function PatrocinadoresCarousel() {
         {/* Botão Avançar */}
         <button
           onClick={nextSlide}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-[#8B2500] text-white p-2 rounded-full hover:bg-[#6e1d00]"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10  text-white p-2 rounded-full hover:bg-[#6e1d00]" style={{backgroundColor:'#8B2500', border:'transparent', borderRadius:'10px'}}
         >
           &#8594;
         </button>
       </div>
-
-      {/* Estilos extras */}
-      <style jsx>{`
+  {/* Estilos extras */}
+  <style jsx>{`
         .flip-card-inner {
           position: relative;
           width: 100%;
