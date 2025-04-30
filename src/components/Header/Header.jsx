@@ -34,24 +34,24 @@ export default function Header() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-4">
 
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#" style={{ color: "#902e00", fontWeight: "bold" }}>
+              <Link className="nav-link active" href='/home' style={{ color: "#902e00", fontWeight: "bold", textDecoration: 'none' }}>
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#" style={{ color: "#902e00", fontWeight: "bold" }}>
+                <Link className="nav-link active" href='/Cardapio' style={{ color: "#902e00", fontWeight: "bold", textDecoration: 'none' }}>
                   Cardápio
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#" style={{ color: "#902e00", fontWeight: "bold" }}>
-                  História
-                </a>
+                <Link className="nav-link active" href='/historia' style={{ color: "#902e00", fontWeight: "bold", textDecoration: 'none' }}>
+                  Historia
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#" style={{ color: "#902e00", fontWeight: "bold" }}>
-                  ONG's
-                </a>
+                <Link className="nav-link active" href='/Ongs' style={{ color: "#902e00", fontWeight: "bold", textDecoration: 'none' }}>
+                  Ong's
+                </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
@@ -68,11 +68,11 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      <div class="container-fluid text-center" >
-        <div class="row" >
-          <div class="col" style={{ background: "#ce5016" }}> <p></p> </div>
-          <div class="col" style={{ background: "#f4a421" }}> <p></p> </div>
-          <div class="col" style={{ background: "#9a4015" }}> <p></p> </div>
+      <div className="container-fluid text-center" >
+        <div className="row" >
+          <div className="col" style={{ background: "#ce5016" }}> <p></p> </div>
+          <div className="col" style={{ background: "#f4a421" }}> <p></p> </div>
+          <div className="col" style={{ background: "#9a4015" }}> <p></p> </div>
         </div></div>
 
     </>

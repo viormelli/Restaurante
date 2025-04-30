@@ -1,16 +1,17 @@
-import Card from "@/components/Card/card";
+import Image from "next/image";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import PatrocinadoresCarousel from "@/components/Patrocinadores/Patrocinadores";
+import IndigenasSection from "@/components/Indigenos/Indigenos";
+import AfricanasSection from "@/components/Africana/Africana";
+import AsiaticasSection from "@/components/Asiaticas/Asiaticas";
+import DepoimentosSection from "@/components/Depoimentos/Depoimentos";
+import { Historia } from "@/components/Historia/Historia";
 
-export default async function Page() {
-  const res = await fetch("http://10.189.87.39:8080/restaurante", { cache: "no-store" });
-  const data = await res.json();
 
-  console.log("DADOS DA API:", data);
-
-  // Certifique-se de acessar diretamente as chaves que você quer exibir
-  const Patrocinadores = data[0].Patrocinadores || [];  // Acessando diretamente o campo patrocinadores na primeira entrada
-  const Terra = data[0].Terra || [];
+export default function Home() {
   return (
     <>
+      {/* Banner principal */}
       <div id="carouselExampleIndicators" className="carousel slide">
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1" />
@@ -34,26 +35,29 @@ export default async function Page() {
         </button>
       </div>
 
-      {/* Renderizando os patrocinadores */}
-      {Array.isArray(Patrocinadores) && Patrocinadores.length > 0 ? (
-        Patrocinadores.map((item, index) => (
-          <div key={index}>
-            <Card titulo={id.Patrocinadores.Titulo} imagem={id.Patrocinadores.ImagemUm} /> {/* Use a imagem correta conforme o patrocinador */}
-          </div>
-        ))
-      ) : (
-        <p>Nenhum patrocinador encontrado.</p>
-      )}
+     <div style={{marginTop:'20px'}}>
+       <PatrocinadoresCarousel />
+     </div>
+     
+      
+    <div>
+      <Historia/>
+    </div>
+    <div>
+      <IndigenasSection/>
+    </div>
+    <div>
+      <AfricanasSection/>
+    </div>
+    <div>
+      <AsiaticasSection/>
+    </div>
 
-      {Array.isArray(Terra) && Terra.length > 0 ? (
-        Patrocinadores.map((item, index) => (
-          <div key={index}>
-            <historia titulo={Terra & Essencia.Imagem} imagem={Terra & Essencia.Texto} /> {/* Use a imagem correta conforme o patrocinador */}
-          </div>
-        ))
-      ) : (
-        <p>Nenhum patrocinador encontrado.</p>
-      )}
+    <div style={{marginTop: '20px'}}>
+      <DepoimentosSection/>
+    </div>
     </>
+    
   );
 }
+
